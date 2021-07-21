@@ -1,6 +1,6 @@
 import 'express-async-errors';
 
-import { PingRouter } from '@routers';
+import { PingRouter, UserRouter } from '@routers';
 import { errorHandler } from 'src/middlewares';
 
 /**
@@ -9,6 +9,7 @@ import { errorHandler } from 'src/middlewares';
 
 export default function registerRouters(app) {
 	app.use('/ping', PingRouter);
+	app.use('/user', UserRouter);
 
 	app.use(errorHandler);
 }
