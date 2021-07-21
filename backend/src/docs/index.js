@@ -1,3 +1,4 @@
 import pingDocs from './ping';
+import userDocs from './user';
 
-export default { ...pingDocs };
+export default { ...pingDocs, ...userDocs };
