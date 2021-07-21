@@ -22,7 +22,7 @@ export const getUsers = async (req, res) => {
 };
 
 export const getUserById = async (req, res) => {
-	const { id } = req.param;
+	const { id } = req.params;
 
 	const user = await User.findById(id);
 

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 
-import { Add, List } from './pages';
+import { Add, List, User } from './pages';
 import { AppBar } from './components';
 
 export default function AppRouter() {
@@ -17,6 +17,7 @@ export default function AppRouter() {
       <Switch>
         <Route path="/add" exact component={Add} />
         <Route path="/" exact component={List} />
+        <Route path="/:id" exact component={User} />
         <Redirect to="/" />
       </Switch>
     </>
