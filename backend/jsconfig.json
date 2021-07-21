@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/"],
+			"@controllers/*": ["src/controllers/"],
+			"@middlewares/*": ["src/middlewares/"],
+			"@models/*": ["src/models/"],
+			"@routers/*": ["src/routers/"],
+			"@tools/*": ["src/tools/*"],
+			"@controllers": ["src/controllers"],
+			"@helpers/*": ["src/helpers/"],
+			"@models": ["src/models"],
+			"@routers": ["src/routers"],
+			"@tools": ["src/tools"]
+		}
+	},
+	"include": ["src", "tests"],
+	"exclude": ["node_modules"],
+	"compileOnSave": true
+}
