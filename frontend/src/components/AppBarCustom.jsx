@@ -1,17 +1,7 @@
-import { useContext } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
 import { fade, makeStyles } from '@material-ui/core/styles';
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  InputBase,
-  Button,
-} from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
-
-import SearchContext from '../contexts/SearchContext';
+import { AppBar, Toolbar, Typography, Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -66,7 +56,6 @@ export default function ButtonAppBar() {
   const classes = useStyles();
   const { pathname } = useLocation();
   const history = useHistory();
-  const { setSearch } = useContext(SearchContext);
 
   return (
     <div className={classes.root}>
@@ -75,27 +64,13 @@ export default function ButtonAppBar() {
           <Typography variant="h6" className={classes.title}>
             ShunyEka
           </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Search…"
-              onChange={(e) => setSearch(e.target.value)}
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
           <div className={classes.grow} />
-          {pathname === '/view' ? (
+          {pathname === '/' ? (
             <Button color="inherit" onClick={() => history.push('/add')}>
               Add
             </Button>
           ) : (
-            <Button color="inherit" onClick={() => history.push('/view')}>
+            <Button color="inherit" onClick={() => history.push('/')}>
               View
             </Button>
           )}
