@@ -1,5 +1,6 @@
 import config from 'config';
 import helmet from 'helmet';
+import cors from 'cors';
 import { rateLimiter } from '@middlewares';
 
 /**
@@ -11,4 +12,5 @@ export default function registerPreprocessor(app) {
 		app.use(helmet());
 		app.use(rateLimiter);
 	}
+	app.use(cors());
 }
