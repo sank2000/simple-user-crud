@@ -12,7 +12,7 @@ import {
 
 import { StyledTableCell, StyledTableRow, NotFound } from '../components';
 
-export default function List() {
+export default function User() {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
   const history = useHistory();
