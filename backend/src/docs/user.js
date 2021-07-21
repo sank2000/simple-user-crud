@@ -105,5 +105,34 @@ export default {
 				}
 			}
 		}
+	},
+	'/user/{id}': {
+		get: {
+			tags: ['user'],
+			summary: 'get user by id',
+			description: 'get a user based on id',
+			parameters: [
+				{
+					in: 'path',
+					name: 'id',
+					description: 'ID of the user to find',
+					required: false,
+					schema: {
+						...idSchema
+					}
+				}
+			],
+			responses: {
+				200: {
+					description: 'list of users'
+				},
+				404: {
+					description: 'No users found'
+				},
+				400: {
+					description: 'ID not valid'
+				}
+			}
+		}
 	}
 };
